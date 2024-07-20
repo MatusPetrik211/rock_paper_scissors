@@ -13,21 +13,24 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let choice = window.prompt('Choose between: rock , paper or scissors');
+    choice = undefined;
+    while(choice === null || choice === undefined) {
+        let choice = window.prompt('Choose between: rock , paper or scissors');
 
-    // if value isn't lower case then make it lower case
-    if(choice.toLowerCase() !== choice) {
-        choice = choice.toLowerCase();
-    }
-
-    if(choice === 'rock') {
-        return 'rock';
-    }
-    else if(choice === 'paper') {
-        return 'paper';
-    }
-    else if(choice === 'scissors') {
-        return 'scissors';
+        // if value isn't lower case then make it lower case
+        if(choice.toLowerCase() !== choice) {
+            choice = choice.toLowerCase();
+        }
+    
+        if(choice === 'rock') {
+            return 'rock';
+        }
+        else if(choice === 'paper') {
+            return 'paper';
+        }
+        else if(choice === 'scissors') {
+            return 'scissors';
+        }
     }
 }
 
@@ -46,7 +49,7 @@ function playGame() {
             || (humanChoice === 'rock' && computerChoice === 'scissors')
             || (humanChoice === 'scissors' && computerChoice === 'paper')) 
             {
-            console.log(`You won! ${humanChoice} beats ${computerChoice}`);
+            console.log(`You won! ${humanChoice} beats ${computerChoice}.`);
             humanScore++;
         }
         // If none of the statements above are true, then computer won
@@ -58,11 +61,29 @@ function playGame() {
 
     for(let i = 1; i <= 5; i++)
     {
-        console.log(`Round ${i}`)
+        console.log(`Round ${i}`);
+        console.log(`Computer choose ${computerSelection}.`);
         playRound(humanSelection, computerSelection);
-        humanSelection = getHumanChoice();
-        computerSelection = getComputerChoice();
+        console.log(' ');
+        if(i <= 4 )
+        {
+            humanSelection = getHumanChoice();
+            computerSelection = getComputerChoice();
+        }
     }
+
+    if(humanScore > computerScore) {
+        console.log("You've won. CONGRATULATIONS!!");
+    }
+    else if(computerScore > humanScore) {
+        console.log("You've lost. Try again next time!!");
+    }
+    else {
+        console.log("It's a DRAW!!");
+    }
+
+    console.log('!!SCORE!!');
+    console.log(`human: ${humanScore} computer: ${computerScore}`);
 }
 
 playGame();
