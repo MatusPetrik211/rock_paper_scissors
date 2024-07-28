@@ -39,13 +39,7 @@ body {
     display: flex;
     flex-direction: row;
     gap: 40px;
-}
-
-.option {
-    border: 3px black solid;
-    border-radius: 15px;
-    height: 160px;
-    width: 160px;
+    margin: 10px;
 }
 
 .score-area {
@@ -58,4 +52,24 @@ body {
     font-size: 30px;
     margin: 30px 0;
     visibility: hidden;
+}
+
+.button {
+    background-color: rgba(110, 105, 82, 0.723);
+    border: 3px black solid;
+    border-radius: 15px;
+    height: 160px;
+    width: 160px;
+}
+
+.player-button:hover {
+    background-color: rgb(101, 173, 119);
+    border-width: 4px;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.player-button:active {
+    background-color: rgb(0, 99, 69);
+    transition: all 0.1s linear;
 }
