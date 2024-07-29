@@ -5,27 +5,51 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>rock paper scissors</title>
         <link rel="stylesheet" href="styles.css">
-        <script scr="script.js" defer></script>
+        <script src="script.js" defer></script>
     </head>
     <body>
         <div class="area">
             <h1 class="head-line">ROCK-PAPER-SCISSORS</h1>
             <h3 class="sub-head-line">YOU</h3>
             <ul class="buttons">
-                <li><button class="player-button button"><img src="imgs/rock-576669_1920.png" width="100px" height="100px"></button></li>
-                <li><button class="player-button button"><img src="imgs/paper-576386_1920.png" width="100px" height="100px"></button></li>
-                <li><button class="player-button button"><img src="imgs/cut-1297554_1920.png" width="100px" height="100px"></button></li>
+                <li>
+                    <button id="player-rock" class="player-button button">
+                        <img src="imgs/rock-576669_1920.png" alt="rock" width="100px" height="100px">
+                    </button>
+                </li>
+                <li>
+                    <button id="player-paper" class="player-button button">
+                        <img src="imgs/paper-576386_1920.png"alt="paper" width="100px" height="100px">
+                    </button>
+                </li>
+                <li>
+                    <button id="player-scissors" class="player-button button">
+                        <img src="imgs/cut-1297554_1920.png"alt="scissors" width="100px" height="100px">
+                    </button>
+                </li>
             </ul>
             <h3 class="vs">vs</h3>
             <ul class="buttons">
-                <li><button class="computer-button button"><img src="imgs/rock-576669_1920.png" width="100px" height="100px"></button></li>
-                <li><button class="computer-button button"><img src="imgs/paper-576386_1920.png" width="100px" height="100px"></button></li>
-                <li><button class="conputer-button button"><img src="imgs/cut-1297554_1920.png" width="100px" height="100px"></button></li>
+                <li>
+                    <button id="computer-rock" class="computer-button button">
+                        <img src="imgs/rock-576669_1920.png" alt="rock" width="100px" height="100px">
+                    </button>
+                </li>
+                <li>
+                    <button id="computer-paper" class="computer-button button">
+                        <img src="imgs/paper-576386_1920.png" alt="paper" width="100px" height="100px">
+                    </button>
+                </li>
+                <li>
+                    <button id="computer-scissors" class="conputer-button button">
+                        <img src="imgs/cut-1297554_1920.png" alt="scissors" width="100px" height="100px">
+                    </button>
+                </li>
             </ul>
             <h3 class="sub-head-line">COMPUTER</h3>
             <div class="score-area">
-                <h3 class="score">You: </h3>
-                <h3 class="score">Computer: </h3>
+                <h3 class="player-score score">You: </h3>
+                <h3 class="computer-score score">Computer: </h3>
             </div>
             <h4 class="result">You won!!!</h4>
         </div>
