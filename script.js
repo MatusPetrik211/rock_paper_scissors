@@ -22,15 +22,16 @@ function getComputerChoice() {
 
 function playGame() {
     const result = document.querySelector('.result');
-    const rock = document.querySelector('#player-rock');
-    const paper = document.querySelector('#player-paper');
-    const scissors = document.querySelector('#player-scissors');
     const humanScoreCount = document.querySelector('.player-score');
     const computerScoreCount = document.querySelector('.computer-score');
+    const playerRock = document.querySelector('#player-rock');
+    const playerPaper = document.querySelector('#player-paper');
+    const playerScissors = document.querySelector('#player-scissors');
+    const computerRock = document.querySelector('#computer-rock');
+    const computerPaper = document.querySelector('#computer-paper');
+    const computerScissors = document.querySelector('#computer-scissors');
 
     result.textContent = "";
-
-    let computerSelection = getComputerChoice();
 
     let humanScore = 0;
     let computerScore = 0;
@@ -38,9 +39,18 @@ function playGame() {
     humanScoreCount.textContent = `You: ${humanScore}`;
     computerScoreCount.textContent = `Computer: ${computerScore}`;
 
-    rock.addEventListener('click', () => {playRound('rock', computerSelection)});
-    paper.addEventListener('click', () => {playRound('paper', computerSelection)});
-    scissors.addEventListener('click', () => {playRound('scissors', computerSelection)});
+    playerRock.addEventListener('click', () => {
+        let computerSelection = getComputerChoice(); 
+        playRound('rock', computerSelection);
+    });
+    playerPaper.addEventListener('click', () => {
+        let computerSelection = getComputerChoice();
+        playRound('paper', computerSelection);
+    });
+    playerScissors.addEventListener('click', () => {
+        let computerSelection = getComputerChoice();
+        playRound('scissors', computerSelection);
+    });
     
 
     function playRound(humanChoice, computerChoice) {
@@ -63,7 +73,13 @@ function playGame() {
             computerScoreCount.textContent = `Computer: ${computerScore}`;
         }
 
-        computerSelection = getComputerChoice();
+        // Wait 1 seconds to change the color back to normal
+        setTimeout(function(){
+            computerRock.setAttribute('style', 'background-color: rgba(110, 105, 82, 0.723); border: 3px black solid; transition: all 0.3s linear;');
+            computerPaper.setAttribute('style', 'background-color: rgba(110, 105, 82, 0.723); border: 3px black solid; transition: all 0.3s linear;');
+            computerScissors.setAttribute('style', 'background-color: rgba(110, 105, 82, 0.723); border: 3px black solid; transition: all 0.3s linear;');
+        }, 500);
+
         if(humanScore ===  5 || computerScore === 5) {
             showEndMessage();
         }
