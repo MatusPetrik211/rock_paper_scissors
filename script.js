@@ -93,6 +93,16 @@ function playGame() {
         else if(computerScore > humanScore) {
             result.textContent = "You've lost. Try again next time!!";
         }
+
+        // Wait before resetting the score
+        setTimeout(function(){
+            humanScore = 0;
+            computerScore = 0;
+            humanScoreCount.textContent = `You: ${humanScore}`;
+            computerScoreCount.textContent = `Computer: ${computerScore}`;
+            result.textContent = "";
+        }, 2000);
+        
     }
 }
 
