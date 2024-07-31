@@ -101,7 +101,7 @@ function playGame() {
             humanScoreCount.textContent = `You: ${humanScore}`;
             computerScoreCount.textContent = `Computer: ${computerScore}`;
             result.textContent = "";
-        }, 2000);
+        }, 1000);
         
     }
 }
